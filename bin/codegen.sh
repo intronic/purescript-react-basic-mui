@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -x
+set -e
 
 npx spago run --node-args "codegen --all-components" --main Codegen.Main --config "codegen.dhall"
 
