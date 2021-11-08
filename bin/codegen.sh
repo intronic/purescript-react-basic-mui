@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
+set -x
 
-spago run --node-args "codegen --all-components" --main Codegen.Main --config "codegen.dhall"
+npx spago run --node-args "codegen --all-components" --main Codegen.Main --config "codegen.dhall"
 
 # find ./src -name '*.purs' | while read f; do
 #   sed 's/⇒/=>/g' -i "$f"
@@ -10,4 +11,4 @@ spago run --node-args "codegen --all-components" --main Codegen.Main --config "c
 #   sed 's/⇐/<=/g' -i "$f"
 # done
 
-find ./src -name '*.purs' -exec purty --write '{}' \;
+find ./src -name '*.purs' -exec npx purty --write '{}' \;
